@@ -10,14 +10,14 @@ colnames(Asad_C2)
 
 # Use numerical data only
 clC1 <- Asad_C1[, 2:4]
-row.names(Asad_C1) <- clusterC1[, 1]
+row.names(clC1) <- Asad_C1[, 1]
 colnames(clC1)
 
 clC2 <- Asad_C2[, 2:6]
 row.names(clC2) <- Asad_C2[, 1]
 colnames(clC2)
 
-?hclust
+
 
 # Clustering #############################
 
@@ -31,8 +31,10 @@ c1    # Show info on clustering
 # Plot dendrogram of clusters
 plot(c1, main = "Cluster for searches unicornData virtualization, Internet security")
 
-
+# Put all together in one line
+plot(hclust(dist(clC1)))
 plot(hclust(dist(clC2)), main = "Cluster for searches unicorn, Internet Security, Data mining, brexit, fifa")
+
 
 
 
